@@ -61,6 +61,8 @@
         <script>
             'use strict'
             let num = 1
+            let _question = 0
+            let ans = ''
             document.getElementById('light').onclick = function() {
                 num +=1
                 document.getElementById('atai').textContent = num
@@ -68,6 +70,10 @@
             document.getElementById('left').onclick = function() {
                 num -=1
                 document.getElementById('atai').textContent = num
+            }
+            document.getElementById('iti').onclick = function() {
+                ans = ans + '1'
+                document.getElementById('ans').textContent = ans
             }
         </script>
     </body>
