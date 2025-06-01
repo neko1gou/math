@@ -64,6 +64,45 @@
             let _question = 0
             let rui = 0
             let ans = ''
+            let ans1 = ''
+            let ans2 = ''
+            function innsuubunnkai () {
+                let random = Math.floor(Math.random()*3+1)
+                let a = Math.floor(Math.random()*num+1)
+                let b = Math.floor(Math.random()*(num+1))
+                let kigou = Math.floor(Math.random()*4+1)
+                let c = 0
+                let d = 0
+                if (rondom === 1)  {
+                    if (kigou === 2){
+                        a = a*-1
+                    }
+                    if (kigou === 3){
+                        b = b*-1
+                    }
+                    if (kigou === 4){
+                        a = a*-1
+                        b = b*-1
+                    }
+                    c = a+b
+                    d = a*b
+                    if (a > -1){
+                        a = '+'+a
+                    }
+                    if (b > -1){
+                        b = '+'+b
+                    }
+                    if (c > -1){
+                        c = '+'+c
+                    }
+                    if (d > -1){
+                        d = '+'+d
+                    }
+                    _question = 'x²'+c+'x'+d
+                    ans1 ='(x'+a+')(x'+b+')'
+                    ans2 ='(x'+b+')(x'+a+')'
+                }
+            }
             document.getElementById('light').onclick = function() {
                 num +=1
                 document.getElementById('atai').textContent = num
