@@ -127,6 +127,66 @@
                     ans2 ='(x-'+a+')(x+'+a+')'
                 }
             }
+            function tennkai () {
+                let random = Math.floor(Math.random()*3+1)
+                let a = Math.floor(Math.random()*num+1)
+                let b = Math.floor(Math.random()*(num+1))
+                let kigou = Math.floor(Math.random()*4+1)
+                let c = 0
+                let d = 0
+                if (random === 1)  {
+                    if (kigou === 2){
+                        a = a*-1
+                    }
+                    if (kigou === 3){
+                        b = b*-1
+                    }
+                    if (kigou === 4){
+                        a = a*-1
+                        b = b*-1
+                    }
+                    c = a+b
+                    d = a*b
+                    if (a > -1){
+                        a = '+'+a
+                    }
+                    if (b > -1){
+                        b = '+'+b
+                    }
+                    if (c > -1){
+                        c = '+'+c
+                    }
+                    if (d > -1){
+                        d = '+'+d
+                    }
+                    _question = '(x'+a+')(x'+b+')'
+                    ans1 ='x²'+c+'x'+d
+                    ans2 =''
+                }
+                if (random === 2)  {
+                    if (kigou === 2){
+                        a = a*-1
+                    }
+                    c = a*2
+                    d = a*a
+                    if (a > -1){
+                        a = '+'+a
+                    }
+                    if (c > -1){
+                        c = '+'+c
+                    }
+                    d = '+'+d
+                    _question = '(x'+a+')²'
+                    ans1 ='x²'+c+'x'+d
+                }
+                if (random === 3)  {
+                    c = a*a
+                    c = '-'+c
+                    _question = '(x+'+a+')(x-'+a+')'
+                    ans1 ='x²'+c
+                    ans2 =''
+                }
+            }
             document.getElementById('light').onclick = function() {
                 num +=1
                 document.getElementById('atai').textContent = num
@@ -298,12 +358,16 @@
                     }else if (ans2 === ans){
                         document.getElementById('ans').textContent = "正解"
                     }else {
-                        document.getElementById('ans').textContent = "不正解"
+                        document.getElementById('ans').textContent = "不正解 答え；"+ans1
                     }
                     ans = ''
                     syurui = document.getElementById("syurui").value;
-                    if (syurui === 'tennkai'){
+                    if (syurui === "innsuubunnkai"){
                         innsuubunnkai()
+                        document.getElementById('Question').textContent = _question
+                    }
+                    if (syurui === 'tennkai'){
+                        tennkai()
                         document.getElementById('Question').textContent = _question
                     }
                 } else {
