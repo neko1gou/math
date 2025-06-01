@@ -74,7 +74,7 @@
                 let kigou = Math.floor(Math.random()*4+1)
                 let c = 0
                 let d = 0
-                if (rondom === 1)  {
+                if (random === 1)  {
                     if (kigou === 2){
                         a = a*-1
                     }
@@ -103,7 +103,7 @@
                     ans1 ='(x'+a+')(x'+b+')'
                     ans2 ='(x'+b+')(x'+a+')'
                 }
-                if (rondom === 2)  {
+                if (random === 2)  {
                     if (kigou === 2){
                         a = a*-1
                     }
@@ -119,7 +119,7 @@
                     _question = 'x²'+c+'x'+d
                     ans1 ='(x'+a+')²'
                 }
-                if (rondom === 3)  {
+                if (random === 3)  {
                     c = a*a
                     c = '-'+c
                     _question = 'x²'+c
@@ -294,7 +294,8 @@
             document.getElementById('ok').onclick = function() {
                 if (rui < 1) {
                     ans = ''
-                    if (syurui === tennkai){
+                    syurui = document.getElementById("syurui").value;
+                    if (syurui === 'tennkai'){
                         innsuubunnkai ()
                         document.getElementById('Qestion').textContent = _question
                     }
