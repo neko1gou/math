@@ -75,6 +75,7 @@
             document.getElementById('rui').onclick = function() {
                 if (rui < 1) {
                      rui = 1
+                     document.getElementById('ok').textContent = '^end'
                 }
             }
             document.getElementById('iti').onclick = function() {
@@ -232,6 +233,7 @@
                     ans = ''
                 } else {
                     rui = 0
+                    document.getElementById('ok').textContent = 'ok'
                 }
                 document.getElementById('ans').textContent = ans
             }
