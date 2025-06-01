@@ -66,6 +66,7 @@
             let ans = ''
             let ans1 = ''
             let ans2 = ''
+            let syurui = document.getElementById("syurui").value;
             function innsuubunnkai () {
                 let random = Math.floor(Math.random()*3+1)
                 let a = Math.floor(Math.random()*num+1)
@@ -101,6 +102,29 @@
                     _question = 'x²'+c+'x'+d
                     ans1 ='(x'+a+')(x'+b+')'
                     ans2 ='(x'+b+')(x'+a+')'
+                }
+                if (rondom === 2)  {
+                    if (kigou === 2){
+                        a = a*-1
+                    }
+                    c = a*2
+                    d = a*a
+                    if (a > -1){
+                        a = '+'+a
+                    }
+                    if (c > -1){
+                        c = '+'+c
+                    }
+                    d = '+'+d
+                    _question = 'x²'+c+'x'+d
+                    ans1 ='(x'+a+')²'
+                }
+                if (rondom === 3)  {
+                    c = a*a
+                    c = '-'+c
+                    _question = 'x²'+c
+                    ans1 ='(x+'+a+')(x-'+a+')'
+                    ans2 ='(x-'+a+')(x+'+a+')'
                 }
             }
             document.getElementById('light').onclick = function() {
@@ -270,6 +294,9 @@
             document.getElementById('ok').onclick = function() {
                 if (rui < 1) {
                     ans = ''
+                    if (syurui === tennkai){
+                        innsuubunnkai ()
+                    }
                 } else {
                     rui = 0
                     document.getElementById('ok').textContent = 'ok'
