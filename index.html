@@ -62,6 +62,7 @@
             'use strict'
             let num = 1
             let _question = 0
+            let rui = 0
             let ans = ''
             document.getElementById('light').onclick = function() {
                 num +=1
@@ -71,9 +72,50 @@
                 num -=1
                 document.getElementById('atai').textContent = num
             }
-            document.getElementById('iti').onclick = function() {
-                ans = ans + '1'
-                document.getElementById('ans').textContent = ans
+            document.getElementById('rui').onclick = function() {
+                rui = 1
+            }
+            if (rui < 1) {
+                document.getElementById('iti').onclick = function() {
+                    ans = ans + '1'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('ni').onclick = function() {
+                    ans = ans + '2'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('san').onclick = function() {
+                    ans = ans + '3'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('yon').onclick = function() {
+                    ans = ans + '4'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('go').onclick = function() {
+                    ans = ans + '5'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('roku').onclick = function() {
+                    ans = ans + '6'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('nana').onclick = function() {
+                    ans = ans + '7'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('hati').onclick = function() {
+                    ans = ans + '8'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('kyuu').onclick = function() {
+                    ans = ans + '9'
+                    document.getElementById('ans').textContent = ans
+                }
+                document.getElementById('zero').onclick = function() {
+                    ans = ans + '0'
+                    document.getElementById('ans').textContent = ans
+                }
             }
         </script>
     </body>
