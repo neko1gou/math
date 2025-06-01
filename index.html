@@ -215,6 +215,26 @@
                 }
                 document.getElementById('ans').textContent = ans
             }
+            document.getElementById('iko-ru').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + '='
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('root').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + '√'
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('ok').onclick = function() {
+                if (rui < 1) {
+                    ans = ''
+                } else {
+                    rui = 0
+                }
+                document.getElementById('ans').textContent = ans
+            }
         </script>
     </body>
 </html>
