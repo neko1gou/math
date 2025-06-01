@@ -72,50 +72,66 @@
                 num -=1
                 document.getElementById('atai').textContent = num
             }
-            if (rui < 1) {
-                document.getElementById('rui').onclick = function() {
-                    rui = 2
+            document.getElementById('rui').onclick = function() {
+                if (rui < 1) {
+                     rui = 1
                 }
-                document.getElementById('iti').onclick = function() {
+            }
+            document.getElementById('iti').onclick = function() {
+                if (rui < 1) {
                     ans = ans + '1'
-                    document.getElementById('ans').textContent = ans
+                } else {
+                    ans = ans + '¹'
                 }
-                document.getElementById('ni').onclick = function() {
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('ni').onclick = function() {
+                if (rui < 1) {
                     ans = ans + '2'
-                    document.getElementById('ans').textContent = ans
+                } else {
+                    ans = ans + '²'
                 }
-                document.getElementById('san').onclick = function() {
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('san').onclick = function() {
+                if (rui < 1) {
                     ans = ans + '3'
-                    document.getElementById('ans').textContent = ans
+                } else {
+                    ans = ans + '²'
                 }
-                document.getElementById('yon').onclick = function() {
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('yon').onclick = function() {
+                if (rui < 1) {
                     ans = ans + '4'
-                    document.getElementById('ans').textContent = ans
+                } else {
+                    ans = ans + '²'
                 }
-                document.getElementById('go').onclick = function() {
-                    ans = ans + '5'
-                    document.getElementById('ans').textContent = ans
-                }
-                document.getElementById('roku').onclick = function() {
-                    ans = ans + '6'
-                    document.getElementById('ans').textContent = ans
-                }
-                document.getElementById('nana').onclick = function() {
-                    ans = ans + '7'
-                    document.getElementById('ans').textContent = ans
-                }
-                document.getElementById('hati').onclick = function() {
-                    ans = ans + '8'
-                    document.getElementById('ans').textContent = ans
-                }
-                document.getElementById('kyuu').onclick = function() {
-                    ans = ans + '9'
-                    document.getElementById('ans').textContent = ans
-                }
-                document.getElementById('zero').onclick = function() {
-                    ans = ans + '0'
-                    document.getElementById('ans').textContent = ans
-                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('go').onclick = function() {
+                ans = ans + '5'
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('roku').onclick = function() {
+                ans = ans + '6'
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('nana').onclick = function() {
+                ans = ans + '7'
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('hati').onclick = function() {
+                ans = ans + '8'
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('kyuu').onclick = function() {
+                ans = ans + '9'
+                document.getElementById('ans').textContent = ans
+                        }
+            document.getElementById('zero').onclick = function() {
+                ans = ans + '0'
+                document.getElementById('ans').textContent = ans
             }
         </script>
     </body>
