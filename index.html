@@ -72,10 +72,10 @@
                 num -=1
                 document.getElementById('atai').textContent = num
             }
-            document.getElementById('rui').onclick = function() {
-                rui = 2
-            }
             if (rui < 1) {
+                document.getElementById('rui').onclick = function() {
+                    rui = 2
+                }
                 document.getElementById('iti').onclick = function() {
                     ans = ans + '1'
                     document.getElementById('ans').textContent = ans
