@@ -293,7 +293,9 @@
             }
             document.getElementById('ok').onclick = function() {
                 if (rui < 1) {
-                    if (ans1 === ans || ans2 === ans) {
+                    if (ans1 === ans) {
+                        document.getElementById('ans').textContent = "正解"
+                    }else if (ans2 === ans){
                         document.getElementById('ans').textContent = "正解"
                     }else {
                         document.getElementById('ans').textContent = "不正解"
