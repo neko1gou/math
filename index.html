@@ -31,7 +31,7 @@
             font-family: sans-serif;
             font-size: 20px;
             }
-            #delete:active{
+            #delete{
             width: 150px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #ddd; /* 背景色 */
@@ -41,7 +41,7 @@
             font-family: sans-serif;
             font-size: 20px;
             }
-            #delete{
+            #delete:active{
             width: 150px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #999; /* 背景色 */
@@ -88,6 +88,9 @@
             let ans1 = ''
             let ans2 = ''
             let syurui = document.getElementById("syurui").value;
+            let list = ''
+            let numb = 0
+            let i = 0
             function innsuubunnkai () {
                 let random = Math.floor(Math.random()*3+1)
                 let a = Math.floor(Math.random()*num+1)
@@ -376,6 +379,16 @@
                 if (rui < 1) {
                     ans = ans + '√'
                 }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('delete').onclick = function() {
+                numb = ans.length
+                i = 1
+                list = ''
+                while (i < numb){
+                    list = list + ans[i - 1]
+                }
+                ans = list
                 document.getElementById('ans').textContent = ans
             }
             document.getElementById('ok').onclick = function() {
