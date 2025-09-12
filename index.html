@@ -71,6 +71,7 @@
             <option value="tennkai">展開</option>
             <option value="innsuubunnkai">因数分解</option>
             <option value="tasizann">足し算</option>
+            <option value="hikizann">引き算</option>
         </select>
         <div id="num"><p id="light">＞</p><p id="atai">１</p><p id="left">＜</p></body></div>
         <div id="num">
@@ -224,6 +225,14 @@
                 ans1 = String(a + b)
                 ans2 = 'nasi'
                 _question = a+'+'+b
+            }
+            function hikizann () {
+                let a = Math.floor(Math.random()*num+1)
+                let b = Math.floor(Math.random()*num+1)
+                ans1 = a + b
+                ans1 = String(a - b)
+                ans2 = 'nasi'
+                _question = a+'-'+b
             }
             document.getElementById('light').onclick = function() {
                 num +=1
@@ -421,6 +430,10 @@
                     }
                     if (syurui === 'tasizann'){
                         tasizann()
+                        document.getElementById('Question').textContent = _question
+                    }
+                    if (syurui === 'hikizann'){
+                         hikizann()
                         document.getElementById('Question').textContent = _question
                     }
                 } else {
