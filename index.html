@@ -70,6 +70,7 @@
         <select name="syurui" id="syurui">
             <option value="tennkai">展開</option>
             <option value="innsuubunnkai">因数分解</option>
+            <option value="tasizann">足し算</option>
         </select>
         <div id="num"><p id="light">＞</p><p id="atai">１</p><p id="left">＜</p></body></div>
         <div id="num">
@@ -216,6 +217,13 @@
                     ans1 ='x²'+c
                     ans2 ='なし'
                 }
+            }
+            function tasizann {
+                let a = Math.floor(Math.random()*num+1)
+                let b = Math.floor(Math.random()*num+1)
+                ans = a + b
+                ans2 = 'nasi'
+                _question = a+'+'+b
             }
             document.getElementById('light').onclick = function() {
                 num +=1
@@ -409,6 +417,10 @@
                     }
                     if (syurui === 'tennkai'){
                         tennkai()
+                        document.getElementById('Question').textContent = _question
+                    }
+                    if (syurui === 'tasizann'){
+                        tasizann()
                         document.getElementById('Question').textContent = _question
                     }
                 } else {
