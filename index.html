@@ -83,6 +83,7 @@
             <option value="hikizann">引き算</option>
             <option value="kakezann">掛け算</option>
             <option value="warizann">割り算</option>
+            <option value="shisokuennzann">四則演算</option>
         </select>
         <div id="num"><p id="light">＞</p><p id="atai">１</p><p id="left">＜</p></body></div>
         <div id="num">
@@ -104,6 +105,7 @@
             let list = ''
             let numb = 0
             let i = 0
+            let ranndamu = 0
             function innsuubunnkai () {
                 let random = Math.floor(Math.random()*3+1)
                 let a = Math.floor(Math.random()*num+1)
@@ -468,6 +470,25 @@
                     if (syurui === 'warizann'){
                          warizann()
                         document.getElementById('Question').textContent = _question
+                    }
+                    if (syurui === 'shisokuennzann'){
+                        ranndamu = Math.floor(Math.random()*3+1)
+                         switch (ranndamu) {
+                            case 1:
+                               tasizann() 
+                                break;
+                            case 2:
+                                hikizann()
+                                break;
+                            case 3:
+                                kakezann()
+                                break;
+                            case 4:
+                                warizann()
+                                break;
+                            default:
+                                break;
+                         }
                     }
                 } else {
                     rui = 0
