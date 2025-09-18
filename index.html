@@ -79,6 +79,7 @@
         <select name="syurui" id="syurui">
             <option value="tennkai">展開</option>
             <option value="innsuubunnkai">因数分解</option>
+            <option value="nizihouteisiki">二次方程式</option>
             <option value="tasizann">足し算</option>
             <option value="hikizann">引き算</option>
             <option value="kakezann">掛け算</option>
@@ -260,6 +261,40 @@
                 ans1 = String(ans1)
                 ans2 = 'nasi'
                 _question = a+'÷'+b
+            }
+            function soinnsuubunnkai (i) {
+                let I = 2
+                let sosuu = []
+                let I2 =1
+                while (I > i) {
+                    I2 =1
+                    sosuu.push(I)
+                    while (sosuu.length < I2) {
+                        if (Number.isInteger(I / sosuu[I2-1]) === true ){
+                            sosuu.pop()
+                            I2 = sosuu.length + 1
+                        }
+                        I2 += 1
+                    }
+                }
+            }
+            function nizihouteisiki () {
+                let a = Math.floor(Math.random()*num+1)
+                let b = Math.floor(Math.random()*num+1)
+                let c = Math.floor(Math.random()*num+1)
+                if (a === 0) {
+                    a = -1
+                }
+                let b2 = b*-1
+                let b24ac = b*b+4*a*c*-1
+                let kari = b24ac + 1
+                if (Number.isInteger(Math.sqrt(b24ac)) === true) {
+                   kari = Math.sqrt(b24ac)
+                }
+
+                ans1 = 
+                ans2 = 'nasi'
+                _question = a+'x²+'+b+'x+'+c+'=0'
             }
             document.getElementById('light').onclick = function() {
                 num +=1
