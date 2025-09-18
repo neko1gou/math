@@ -278,6 +278,20 @@
                     }
                     I +=1
                 }
+                let result = [];
+                let n = i;
+                let index = 0;
+
+                while (n > 1 && index < sosuu.length) {
+                    let p = sosuu[index];
+                    if (n % p === 0) {
+                        result.push(p)
+                        n = n / p;
+                    } else {
+                        index++;
+                    }
+                }
+                return result;
             }
             function nizihouteisiki () {
                 let a = Math.floor(Math.random()*num+1)
@@ -292,7 +306,22 @@
                 if (Number.isInteger(Math.sqrt(b24ac)) === true) {
                    kari = Math.sqrt(b24ac)
                 }
-
+                let kekka = soinnsuubunnkai(b24ac)
+                let i = 1
+                let sumple = kekka[0]
+                let kazu_kind =[kekka[0]]
+                let kazu =[]
+                let now_kazu = 0
+                while (kekka.length >= i) {
+                    if (kekka[i-1] === sumple){
+                        now_kazu +=1
+                    } else {
+                        kazu.push(now_kazu) 
+                        kazu_kind.push(kekka[i-1])
+                    }
+                    sumple = kekka[i-1]
+                    i+=1
+                }
                 ans1 = 
                 ans2 = 'nasi'
                 _question = a+'x²+'+b+'x+'+c+'=0'
