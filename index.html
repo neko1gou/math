@@ -266,16 +266,17 @@
                 let I = 2
                 let sosuu = []
                 let I2 =1
-                while (I > i) {
+                while (I < i) {
                     I2 =1
                     sosuu.push(I)
-                    while (sosuu.length < I2) {
+                    while (sosuu.length > I2) {
                         if (Number.isInteger(I / sosuu[I2-1]) === true ){
                             sosuu.pop()
-                            I2 = sosuu.length + 1
+                            break
                         }
                         I2 += 1
                     }
+                    I +=1
                 }
             }
             function nizihouteisiki () {
