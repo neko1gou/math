@@ -303,9 +303,6 @@
                 let b2 = b*-1
                 let b24ac = b*b+4*a*c*-1
                 let kari = b24ac + 1
-                if (Number.isInteger(Math.sqrt(b24ac)) === true) {
-                   kari = Math.sqrt(b24ac)
-                }
                 let kekka = soinnsuubunnkai(b24ac)
                 let i = 1
                 let sumple = kekka[0]
@@ -338,6 +335,24 @@
                     }
                     i++
                 }
+                let bunnbo = soinnsuubunnkai(2*a)
+                i = 1
+                sumple = bunnbo[0]
+                kazu_kind =[bunnbo[0]]
+                kazu =[]
+                now_kazu = 0
+                while (bunnbo.length >= i) {
+                    if (bunnbo[i-1] === sumple){
+                        now_kazu +=1
+                    } else {
+                        kazu.push(now_kazu) 
+                        kazu_kind.push(bunnbo[i-1])
+                        now_kazu = 1
+                    }
+                    sumple = bunnbo[i-1]
+                    i+=1
+                }
+                
                 ans1 = 
                 ans2 = 'nasi'
                 _question = a+'x²+'+b+'x+'+c+'=0'
