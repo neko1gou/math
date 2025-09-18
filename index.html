@@ -323,6 +323,21 @@
                     sumple = kekka[i-1]
                     i+=1
                 }
+                let root_out = 1
+                let root_in = 1
+                i = 0
+                while (kazu.length > i) {
+                    
+                    if (kazu[i] % 2 === 0) {
+                        root_out = root_out * kazu[i] * kazu_kind[i] /2
+                    } else if (kazu[i] === 1){
+                        root_in = root_in * kazu_kind[i]
+                    } else {
+                        root_out = root_out * (kazu[i]-1)*kazu_kind[i] /2
+                        root_in = root_in * kazu_kind[i]
+                    }
+                    i++
+                }
                 ans1 = 
                 ans2 = 'nasi'
                 _question = a+'x²+'+b+'x+'+c+'=0'
