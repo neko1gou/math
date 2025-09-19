@@ -355,8 +355,8 @@
                 let bunnsi1 = soinnsuubunnkai(b2)
                 i = 1
                 sumple = bunnsi1[0]
-                bun1_kind =[bunnsi1[0]]
-                bun1kazu =[]
+                let bun1_kind =[bunnsi1[0]]
+                let bun1kazu =[]
                 now_kazu = 0
                 while (bunnsi1.length >= i) {
                     if (bunnsi1[i-1] === sumple){
@@ -368,6 +368,37 @@
                     }
                     sumple = bunnsi1[i-1]
                     i+=1
+                }
+                let bunnsi2 = soinnsuubunnkai(b2)
+                i = 1
+                sumple = bunnsi2[0]
+                let bun2_kind =[bunnsi1[0]]
+                let bun2kazu =[]
+                now_kazu = 0
+                while (bunnsi2.length >= i) {
+                    if (bunnsi2[i-1] === sumple){
+                        now_kazu +=1
+                    } else {
+                        bun2kazu.push(now_kazu) 
+                        bun2_kind.push(bunnsi2[i-1])
+                        now_kazu = 1
+                    }
+                    sumple = bunnsi2[i-1]
+                    i+=1
+                }
+                i = 0
+                now_kazu = 0
+                let bun1 = []
+                let bun1_num = []
+                while (bun1kazu.length > i || kazu_kind.length >= now_kazu+1) {
+                    if (bun1_kind[i]===kazu_kind[now_kazu]) {
+                        bun1.push(bun1_kind[i])
+                        bun1_num.push(bun1kazu[i])
+                        now_kazu++
+                    } else if (bun1_kind[i]>kazu_kind[now_kazu]) {
+                        now_kazu++
+                    }
+                    i++
                 }
                 ans1 = 
                 ans2 = 'nasi'
