@@ -390,23 +390,25 @@
                 now_kazu = 0
                 let bun1 = []
                 let bun1_num = []
-                while (bun1kazu.length > i || kazu_kind.length >= now_kazu+1) {
+                while (i < bun1kazu.length || now_kazu < kazu_kind.length) {
                     if (bun1_kind[i]===kazu_kind[now_kazu]) {
                         bun1.push(bun1_kind[i])
                         bun1_num.push(bun1kazu[i])
                         now_kazu++
+                        i++
                     } else if (bun1_kind[i]>kazu_kind[now_kazu]) {
                         bun1.push(kazu_kind[now_kazu])
                         bun1_num.push(0)
                         now_kazu++
+                    }else {
+                        i++
                     }
-                    i++
                 }
                 i = 0
                 now_kazu = 0
                 let bun2 = []
                 let bun2_num = []
-                while (bun2kazu.length > i || kazu_kind.length >= now_kazu+1) {
+                while (i < bun2kazu.length || now_kazu < kazu_kind.length) {
                     if (bun2_kind[i]===kazu_kind[now_kazu]) {
                         bun2.push(bun2_kind[i])
                         bun2_num.push(bun2kazu[i])
