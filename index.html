@@ -411,10 +411,14 @@
                         bun2.push(bun2_kind[i])
                         bun2_num.push(bun2kazu[i])
                         now_kazu++
+                        i++
                     } else if (bun2_kind[i]>kazu_kind[now_kazu]) {
+                        bun2.push(kazu_kind[now_kazu])
+                        bun2_num.push(0)
                         now_kazu++
+                    }else {
+                        i++
                     }
-                    i++
                 }
                 
                 ans1 = 
