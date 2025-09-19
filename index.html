@@ -396,10 +396,27 @@
                         bun1_num.push(bun1kazu[i])
                         now_kazu++
                     } else if (bun1_kind[i]>kazu_kind[now_kazu]) {
+                        bun1.push(kazu_kind[now_kazu])
+                        bun1_num.push(0)
                         now_kazu++
                     }
                     i++
                 }
+                i = 0
+                now_kazu = 0
+                let bun2 = []
+                let bun2_num = []
+                while (bun2kazu.length > i || kazu_kind.length >= now_kazu+1) {
+                    if (bun2_kind[i]===kazu_kind[now_kazu]) {
+                        bun2.push(bun2_kind[i])
+                        bun2_num.push(bun2kazu[i])
+                        now_kazu++
+                    } else if (bun2_kind[i]>kazu_kind[now_kazu]) {
+                        now_kazu++
+                    }
+                    i++
+                }
+                
                 ans1 = 
                 ans2 = 'nasi'
                 _question = a+'x²+'+b+'x+'+c+'=0'
