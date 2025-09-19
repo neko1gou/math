@@ -427,8 +427,8 @@
                 while (i<kazu_kind.length){
                     if(bun1_num[i] >= kazu[i] && bun2_num[i] >= kazu[i]){
                         waru = waru*kazu_kind[i]**kazu[i]
-                    }else if (bun1_num !==0 || bun2_num !==0){
-                        if(bun1_num < bun2_num){
+                    }else if (bun1_num[i] !==0 || bun2_num[i] !==0){
+                        if(bun1_num[i] < bun2_num[i]){
                             waru =waru*bun1[i]**bun1_num[i]
                         }else{
                             waru=waru*bun2[i]**bun2_num[i]
