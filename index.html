@@ -436,8 +436,33 @@
                     }
                     i++
                 }
-                ans1 = 
-                ans2 = 'nasi'
+                root_out = root_out/waru
+                b2 = b2/waru
+                let bunnbo2 = a*2/waru
+                let root =0
+                if (root_in === 1){
+                    root =1
+                }
+                let bun =0
+                if (bunnbo2===1){
+                    bun =2
+                }
+                switch (root + bun) {
+                    case 1:
+                        ans1 = (b2+root_out)+'/'+bunnbo2+','+(b2-root_out)+'/'+bunnbo2
+                        ans2 = 
+                        break;
+                    case 2:
+                        break;
+
+                    case 3:
+                        break;
+                    case 0:
+                        break;
+                
+                    default:
+                        break;
+                }
                 _question = a+'x²+'+b+'x+'+c+'=0'
             }
             document.getElementById('light').onclick = function() {
