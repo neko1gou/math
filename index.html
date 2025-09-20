@@ -345,7 +345,9 @@
                     }
                     i++
                 }
-                let bunnbo = soinnsuubunnkai(2*a)
+                let bunnbo = soinnsuubunnkai(Math.abs(2*a))
+                let bunnsi1 = soinnsuubunnkai(Math.abs(b))
+                let bunnsi2 = soinnsuubunnkai(Math.abs(root_out))
                 i = 1
                 sumple = bunnbo[0]
                 kazu_kind =[bunnbo[0]]
@@ -362,11 +364,6 @@
                     sumple = bunnbo[i-1]
                     i+=1
                 }
-                let  bb = b
-                if (bb < 0) {
-                    bb *= -1
-                }
-                let bunnsi1 = soinnsuubunnkai(bb)
                 i = 1
                 sumple = bunnsi1[0]
                 let bun1_kind =[bunnsi1[0]]
@@ -383,7 +380,6 @@
                     sumple = bunnsi1[i-1]
                     i+=1
                 }
-                let bunnsi2 = soinnsuubunnkai(b24ac)
                 i = 1
                 sumple = bunnsi2[0]
                 let bun2_kind =[bunnsi2[0]]
