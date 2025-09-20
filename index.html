@@ -20,7 +20,7 @@
             border: 3px solid #eee;
             border-radius: 5px;
            }
-           #iti, #ni, #san, #tasu, #rui, #root, #yon, #go, #roku, #hiku, #kakkomigi, #kakkomigi2, #nana, #hati, #kyuu, #kakeru, #kakkohidari, #kakkohidari2, #x, #zero, #y, #waru, #iko-ru, #ok {
+           #iti, #ni, #san, #tasu, #rui, #root, #yon, #go, #roku, #hiku, #kakkomigi, #kakkomigi2, #nana, #hati, #kyuu, #kakeru, #kakkohidari, #kakkohidari2, #x, #zero, #y, #waru, #iko-ru, #ok, #puramai, #konnma, #bun, #kainasi {
             width: 50px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #ddd; /* 背景色 */
@@ -30,7 +30,7 @@
             font-family: sans-serif;
             font-size: 20px;
             }
-            #iti:active, #ni:active, #san:active, #tasu:active, #rui:active, #root:active, #yon:active, #go:active, #roku:active, #hiku:active, #kakkomigi:active, #kakkomigi2:active, #nana:active, #hati:active, #kyuu:active, #kakeru:active, #kakkohidari:active, #kakkohidari2:active, #x:active, #zero:active, #y:active, #waru:active, #iko-ru:active, #ok:active{
+            #iti:active, #ni:active, #san:active, #tasu:active, #rui:active, #root:active, #yon:active, #go:active, #roku:active, #hiku:active, #kakkomigi:active, #kakkomigi2:active, #nana:active, #hati:active, #kyuu:active, #kakeru:active, #kakkohidari:active, #kakkohidari2:active, #x:active, #zero:active, #y:active, #waru:active, #iko-ru:active, #ok:active, #pramai:active, #konnma:active, #bun:active, #kainasi:active{
             width: 50px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #999; /* 背景色 */
@@ -41,7 +41,7 @@
             font-size: 20px;
             }
             #delete{
-            width: 150px; /* 幅を統一 */
+            width: 100px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #ddd; /* 背景色 */
             text-align: center; /* テキスト中央揃え */
@@ -51,7 +51,7 @@
             font-size: 20px;
             }
             #delete:active{
-            width: 150px; /* 幅を統一 */
+            width: 100px; /* 幅を統一 */
             height: 50px; /* 高さを統一 */
             background-color: #999; /* 背景色 */
             text-align: center; /* テキスト中央揃え */
@@ -92,7 +92,7 @@
             <div id="yon">4</div><div id="go">5</div><div id="roku">6</div><div id="hiku">-</div><div id="kakkomigi">(</div><div id="kakkomigi2">{</div><br>
             <div id="nana">7</div><div id="hati">8</div><div id="kyuu">9</div><div id="kakeru">×</div><div id="kakkohidari">)</div><div id="kakkohidari2">}</div><br>
             <div id="x">x</div><div id="zero">0</div><div id="y">y</div><div id="waru">÷</div><div id="iko-ru">=</div><div id="ok">ok</div><br>
-            <div id="delete">delete</div>
+            <div id="puramai">±</div><div id="bun">/</div><div id="konnma">,</div><div id="kainasi">解無し</div><div id="delete">delete</div>
         </div>
         <script>
             'use strict'
@@ -309,6 +309,12 @@
                 let kazu_kind =[kekka[0]]
                 let kazu =[]
                 let now_kazu = 0
+                if (b24ac < 0) {
+                    ans1 = '解なし、No solution';
+                    ans2 = 'nasi';
+                    _question = a + 'x²+' + b + 'x+' + c + '=0';
+                    return;
+                }
                 while (kekka.length >= i) {
                     if (kekka[i-1] === sumple){
                         now_kazu +=1
@@ -632,6 +638,30 @@
             document.getElementById('root').onclick = function() {
                 if (rui < 1) {
                     ans = ans + '√'
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('puramai').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + '±'
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('konnma').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + ','
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('bun').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + '/'
+                }
+                document.getElementById('ans').textContent = ans
+            }
+            document.getElementById('kainasi').onclick = function() {
+                if (rui < 1) {
+                    ans = ans + 'kainasi、'
                 }
                 document.getElementById('ans').textContent = ans
             }
