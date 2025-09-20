@@ -453,7 +453,7 @@
                 while (i<kazu_kind.length){
                     if(bun1_num[i] >= kazu[i] && bun2_num[i] >= kazu[i]){
                         waru = waru*kazu_kind[i]**kazu[i]
-                    }else if (bun1_num[i] !==0 || bun2_num[i] !==0){
+                    }else if (bun1_num[i] !==0 && bun2_num[i] !==0){
                         if(bun1_num[i] < bun2_num[i]){
                             waru =waru*bun1[i]**bun1_num[i]
                         }else{
@@ -462,7 +462,6 @@
                     }
                     i++
                 }
-                    waru = 1
                 root_out = root_out/waru
                 b2 = b2/waru
                 let bunnbo2 = a*2/waru
