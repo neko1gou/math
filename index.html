@@ -297,6 +297,14 @@
                 }
                 return result;
             }
+            function yakubunn(a, b) {
+                while (b !== 0) {
+                    let temp = b;
+                    b = a % b;
+                    a = temp;
+                }
+                return a;
+            }
             function nizihouteisiki () {
                 let a = Math.floor(Math.random()*num+1)
                 let b = Math.floor(Math.random()*num*2+1)
@@ -469,6 +477,16 @@
                 root_out = root_out/waru
                 b2 = b2/waru
                 let bunnbo2 = a*2/waru
+                let bunsi1
+                let bunsi2
+                let bunbo1
+                let bunbo2
+                if (root_in = 1){
+                    waru = yakubunn(b2+root_out,bunnbo2)
+                    bunsi1 =(b2+root_out)/2
+                    bunbo1 =bunnbo2 /2
+                    
+                }
                 if (root_out === 1 && root_in !== 1) {
                     root_out = ''
                 }
