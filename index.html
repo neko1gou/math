@@ -481,14 +481,14 @@
                 let bunbo1
                 let bunbo2
                 if (root_in === 1){
-                    waru = yakubunn(b2+root_out,bunnbo2)
+                    waru = yakubunn(Math.abs(b2+root_out),Math.abs(bunnbo2))
                     bunsi1 =(b2+root_out)/waru
                     bunbo1 =bunnbo2 /waru
-                    waru = yakubunn(b2-root_out,bunnbo2)
+                    waru = yakubunn(Math.abs(b2-root_out),Math.abs(bunnbo2))
                     bunsi2 =(b2-root_out)/waru
                     bunbo2 =bunnbo2 /waru
                 } else{
-                    waru = yakubunn(yakubunn(root_out,b2),bunnbo2)
+                    waru = yakubunn(yakubunn(Math.abs(root_out),Math.abs(b2)),Math.abs(bunnbo2))
                     root_out= root_out/waru
                     b2 =b2/waru
                     bunnbo2 =bunnbo2 /waru
