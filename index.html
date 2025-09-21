@@ -483,9 +483,16 @@
                 let bunbo2
                 if (root_in = 1){
                     waru = yakubunn(b2+root_out,bunnbo2)
-                    bunsi1 =(b2+root_out)/2
-                    bunbo1 =bunnbo2 /2
-                    
+                    bunsi1 =(b2+root_out)/waru
+                    bunbo1 =bunnbo2 /waru
+                    waru = yakubunn(b2-root_out,bunnbo2)
+                    bunsi2 =(b2-root_out)/waru
+                    bunbo2 =bunnbo2 /waru
+                } else{
+                    waru = yakubunn(yakubunn(root_out,b2),bunnbo2)
+                    root_out= root_out/waru
+                    b2 =b2/waru
+                    bunnbo2 =bunnbo2 /waru
                 }
                 if (root_out === 1 && root_in !== 1) {
                     root_out = ''
@@ -493,6 +500,13 @@
                 let root =0
                 if (root_in === 1){
                     root =1
+                    if (bunsi1 === 1 && bunsi2 !== 1) {
+                        root = 4
+                    } else if(bunsi1 !==1 && bunsi2 === 1){
+                        root =5
+                    } else if(bunsi1 ===1 && bunnsi2 ===1){
+                        root =8
+                    }
                 }
                 let bun =0
                 if (bunnbo2===1){
@@ -500,8 +514,8 @@
                 }
                 switch (root + bun) {
                     case 1:
-                        ans1 = (b2+root_out)+'/'+bunnbo2+','+(b2-root_out)+'/'+bunnbo2
-                        ans2 = (b2-root_out)+'/'+bunnbo2+','+(b2+root_out)+'/'+bunnbo2
+                        ans1 = bunsi1+'/'+bunbo1+','+bunsi2+'/'+bunbo2
+                        ans2 = bunsi2+'/'+bunbo2+','+bunsi1+'/'+bunbo1
                         break;
                     case 2:
                         ans1 = b2+'±'+root_out+'√'+root_in
@@ -509,14 +523,15 @@
                         break;
 
                     case 3:
-                        ans1 = b2+root_out+','+b2-root_out
-                        ans2 = b2-root_out+','+b2+root_out
+                        ans1 = bunsi1+','+bunsi2
+                        ans2 = bunsi2+','+bunsi1
                         break;
                     case 0:
                         ans1 = b2+'±'+root_out+'√'+root_in+'/'+bunnbo2
                         ans2 ='nasi'
                         break;
-                
+                    case 4:
+                        
                     default:
                         break;
                 }
