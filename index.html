@@ -310,7 +310,7 @@
                 let kekka = soinnsuubunnkai(b24ac)
                 let i = 1
                 let sumple = kekka[0]
-                let kazu_kind =[kekka[0]]
+                let kazu_kind =[]
                 let kazu =[]
                 let now_kazu = 0
                 if (b24ac < 0) {
@@ -319,7 +319,7 @@
                     _question = a + 'x²+' + b + 'x+' + c + '=0';
                     return;
                 }
-                while (kekka.length >= i) {
+                while (kekka.length >= i-1) {
                     if (kekka[i-1] === sumple){
                         now_kazu +=1
                     } else {
