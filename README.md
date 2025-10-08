@@ -4,4 +4,4 @@
 ## How to use this website?
 You can practice calculate.  
 If you click "ok button",you can sterted practiceing calculate.  
-![](https://neko1gou.github.io/math/image/IMG_1203.jpeg =full)
+![](https://github.com/neko1gou/math/blob/main/image/IMG_1203.jpeg?raw=true =full)
